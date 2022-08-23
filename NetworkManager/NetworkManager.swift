@@ -24,6 +24,7 @@ class NetworkManager {
     
     // Create a static, constant instance of
     // the enclosing class (itself) and initialize.
+   
     static let shared = NetworkManager()
         
     //following are the public properties
@@ -31,7 +32,15 @@ class NetworkManager {
     
     var isAPIRetryingRequired:Bool = false
     
+    var isAPICachingRequired:Bool = false
+    
+    var countForAPIRetrying:Int = 2
+    
     var isRefreshTokenApiHandlingRequired: Bool = false
+    
+    var apiCacheStorege:Int = 2048
+    
+    var apiTimeOut:Int = 10
     
     
     // This is the private, shared resource we're protecting.
